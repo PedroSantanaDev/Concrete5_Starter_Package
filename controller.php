@@ -27,7 +27,9 @@ use Concrete\Core\Page\Type\PublishTarget\Type\Type as PublishTargetType;
 use Concrete\Core\Page\Type\Type as CollectionType;
 use PageType;
 use URL;
-
+/**
+ * Package controller class
+ */
 class Controller extends Package
 {
   protected $pkgHandle = 'starter';
@@ -46,23 +48,40 @@ class Controller extends Package
   protected $blocks = array(
       //'block_name'
   );
-
+  /**
+   * Package discription for the installation page
+   *
+   * @return void
+   */
   public function getPackageDescription()
   {
     return t('Concrete5 Starter  Package');
   }
-
+  /**
+   * Package name display on the Concrete5 install page
+   *
+   * @return void
+   */
   public function getPackageName()
   {
     return t('Starter Package');
   }
 
+  /**
+   * Unistall the package and drop tables
+   *
+   * @return void
+   */
   public function uninstall() {
     parent::uninstall();
     $db = Database::connection();
     //$db->executeQuery('DROP TABLE IF EXISTS Table_name');
   }
-
+  /**
+   * Install the package, theme and blocks
+   *
+   * @return void
+   */
   public function install() {
     $pkg = parent::install();
     PageTheme::add('starter', $pkg);
@@ -74,13 +93,21 @@ class Controller extends Package
     //Create blocks if we need to
     $this->checkCreateBlocks();
   }
-
+  /**
+   * Upgrade package
+   *
+   * @return void
+   */
   public function upgrade() {
     $pkg = parent::upgrade();
     $this->checkCreatePages();
     $this->checkCreateBlocks();
   }
-
+  /**
+   * Creates pages if needed
+   *
+   * @return void
+   */
   private function checkCreatePages() {
     if(count($this->singlePages)) {
       $pkg = Package::getByHandle($this->pkgHandle);
@@ -96,7 +123,11 @@ class Controller extends Package
       }
     }
   }
-
+  /**
+   * Creates blocks if needed
+   *
+   * @return void
+   */
   private function checkCreateBlocks() {
     if(count($this->blocks)) {
       $pkg = Package::getByHandle($this->pkgHandle);
@@ -108,7 +139,11 @@ class Controller extends Package
       }
     }
   }
-
+  /**
+   * Registrer assets 
+   *
+   * @return void
+   */
   public function on_start()
   {
     $pkg = Package::getByHandle($this->pkgHandle);
@@ -123,7 +158,11 @@ class Controller extends Package
     'js/bootstrap-datetimepicker.min.js', array(), $pkg);
     $al->register('css', 'bootstrap', 'css/bootstrap.min.css', array(), $pkg);
   }
-
+  /**
+   * Registrater package routes
+   *
+   * @return void
+   */
   protected function registerRoutes()
   {
     /*Route::register(
@@ -147,7 +186,12 @@ class Controller extends Package
   'subpage' => 'Subpage',
   );
 
-
+/**
+ * Add page types
+ *
+ * @param Package $pkg
+ * @return void
+ */
 private function addCollectionTypes($pkg)
 {
    // Loader::model('collection_types');

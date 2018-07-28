@@ -1,13 +1,4 @@
-<?php defined('C5_EXECUTE') or die("Access Denied.");
-
-$footerSiteTitle = new GlobalArea('Footer Site Title');
-$footerSiteTitleBlocks = $footerSiteTitle->getTotalBlocksInArea();
-
-$footerSocial = new GlobalArea('Footer Social');
-$footerSocialBlocks = $footerSocial->getTotalBlocksInArea();
-
-$displayFirstSection = $footerSiteTitleBlocks > 0 || $footerSocialBlocks > 0 || $c->isEditMode();
-?>
+<?php defined('C5_EXECUTE') or die("Access Denied.");?>
 
 <footer id="footer-theme">    
     <section>

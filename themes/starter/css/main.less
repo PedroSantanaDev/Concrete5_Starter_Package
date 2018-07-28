@@ -64,6 +64,14 @@ div.ccm-page {
 /* CSS with background images – we need these directives to be in the root of theme
  * otherwise we can't both map the stylesheet to them AND the customizer to them
  */
+ html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.ccm-page{
+  min-height: 100%;
+}
 .ccm-image-slider-container {
   background-image: url(@image-slider-background-image);
 }

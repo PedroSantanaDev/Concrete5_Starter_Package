@@ -1,5 +1,5 @@
 <?php defined('C5_EXECUTE') or die("Access Denied.");?>
-
+</div>
 <footer id="footer-theme">    
     <section>
         <div class="container">

@@ -166,9 +166,9 @@ class Controller extends Package
   protected function registerRoutes()
   {
     /*Route::register(
-    '/dashboard/job_opportunity',
-    '\Concrete\Package\Starter\Controller\Dashboard\JobOpportunity::view',
-    'JobOpportunity'
+    '/dashboard/test',
+    '\Concrete\Package\Starter\Controller\Dashboard\Test::view',
+    'Test'
   );*/
  }
 

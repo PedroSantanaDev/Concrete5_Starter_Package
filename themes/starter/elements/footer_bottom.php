@@ -1,22 +1,21 @@
-<?php defined('C5_EXECUTE') or die("Access Denied."); ?>
+<?php defined('C5_EXECUTE') or die("Access Denied.");?>
 
 
-<?php 
+<?php
 
 $live = false;
 
-if($live) : ?>
-<!-- production version, optimized for size and speed -->
+if ($live): ?>
+<!-- Production version, optimized for size and speed -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
-
-<?php else : ?>
-<!-- development version, includes helpful console warnings -->
+<?php else: ?>
+<!-- Development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-<?php endif; ?> 
+<?php endif;?>
 
-<?php View::element('footer_required'); ?>
+<?php View::element('footer_required');?>
 
 </body>
 </html>

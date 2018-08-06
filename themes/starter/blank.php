@@ -12,5 +12,4 @@ $this->inc('elements/header_top.php');
     ?>
 </main>
 
-<?php
-$this->inc('elements/footer_bottom.php');
+<?php  $this->inc('elements/footer.php'); ?>

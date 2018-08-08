@@ -20,8 +20,8 @@
 * @copyright 2014 Mainio Tech Ltd.
 * @license MIT
 */
-namespace Concrete\Package\JobOpportunity\Src;
-use Concrete\Package\JobOpportunity\Src\EntityListHelper;
+namespace Concrete\Package\Starter\Src;
+use Concrete\Package\Starter\Src\EntityListHelper;
 
 abstract class Entity extends EntityListHelper
 {

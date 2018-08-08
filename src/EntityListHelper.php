@@ -1,5 +1,5 @@
 <?php
-namespace Concrete\Package\JobOpportunity\Src;
+namespace Concrete\Package\Starter\Src;
 /*
 *This is a simple helper class that provides the methods under
 *Concrete\Core\Search\ItemList\EntityList

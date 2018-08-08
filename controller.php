@@ -37,7 +37,7 @@ class Controller extends Package
   protected $pkgVersion = '1.0';
 
   protected $singlePages = array(
-    // array('/dashboard/page_name'),
+     array('/dashboard/help'),
   );
 
   /**

@@ -35,6 +35,12 @@ class Controller extends Package
   protected $pkgHandle = 'starter';
   protected $appVersionRequired = '8.0';
   protected $pkgVersion = '1.0';
+  /**
+   * App mode dev/production
+   *
+   * @var boolean
+   */
+  protected $is_live = false; //Change to "true" in production
 
   protected $singlePages = array(
      array('/dashboard/help'),
@@ -157,6 +163,19 @@ class Controller extends Package
     $al->register('javascript', 'datetimepicker',
     'js/bootstrap-datetimepicker.min.js', array(), $pkg);
     $al->register('css', 'bootstrap', 'css/bootstrap.min.css', array(), $pkg);
+
+    if($is_live){
+      $al->register('javascript', 'vue', 'js/vue.min.js', array(), $pkg);
+      $al->register('javascript', 'axios', 'js/axios.min.js', array(), $pkg);
+    }else{
+      $al->register('javascript', 'vue', 'js/vue.js', array(), $pkg);
+      $al->register('javascript', 'axios', 'js/axios.js', array(), $pkg);
+      
+    }
+
+
+    $al->register('javascript', 'app-main-js', 'js/main.js', array(), $pkg);
+
   }
   /**
    * Registrater package routes

@@ -1,15 +1,16 @@
 <?php  
 defined('C5_EXECUTE') or die(_("Access Denied."));
 ?>
+<div id="help">
 	<div class="panel panel-default">
-  		<div class="panel-heading"><h2 class="text-primary">Content Management System Help</h2></div>
+  		<div class="panel-heading"><h2 class="text-primary">{{ title }}</h2></div>
   		<div class="panel-body">
-  			<h3 class="text-primary">CMS Reference</h3>
+  			<h3 class="text-primary">{{ sub_title }}</h3>
   			<table class="table table-striped">
  				<thead>
 			      <tr>
-			        <th>Description</th>
-			        <th>Reference</th>
+			        <th>{{ description }}</th>
+			        <th>{{ reference }}</th>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -68,4 +69,6 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 			    <tbody>
 			</table>
   		</div>
+	</div>
+
 	</div>

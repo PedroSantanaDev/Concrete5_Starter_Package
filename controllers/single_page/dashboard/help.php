@@ -20,8 +20,6 @@ class Help extends DashboardPageController
 
         $this->requireAsset('javascript', 'app-main-js');
 
-        Loader::model('user_list');
-
         $this->session  = new SymfonySession();
 
         $html = Loader::helper('html');
@@ -29,15 +27,7 @@ class Help extends DashboardPageController
     }
     public function view()
     {
-        $list = new UserList();
-        $list->setItemsPerPage(10);
-        $pagination = $list->getPagination();
-        $users = $pagination->getCurrentPageResults();
-        $pagination = $pagination->renderDefaultView();
-        //$this->set('pagination', $pagination);
-
-        return $users;
-        //$this->set('users',   $users);
+        
     }
 
 }

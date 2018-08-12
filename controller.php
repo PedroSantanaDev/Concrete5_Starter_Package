@@ -44,6 +44,8 @@ class Controller extends Package
 
   protected $singlePages = array(
      array('/dashboard/help'),
+     array('/dashboard/admin'),
+     array('/dashboard/admin/users'),
   );
 
   /**
@@ -173,12 +175,11 @@ class Controller extends Package
       
     }
 
-
     $al->register('javascript', 'app-main-js', 'js/main.js', array(), $pkg);
 
   }
   /**
-   * Registrater package routes
+   * Register package routes
    *
    * @return void
    */
